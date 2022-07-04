@@ -1,5 +1,6 @@
 
 import { ethers } from "ethers";
+import { AiFillPlayCircle } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import Loader from "./components/loader";
 import {
@@ -185,17 +186,7 @@ function App() {
 
   return (
     <>
-      <Navbar account={account} connectWallet={connectWallet} />
-
-      <section className="flex justify-center items-center ">
-        <div className="w-[90vw] max-w-[900px] ">
-          <GetStarted
-            tokenAdded={tokenAdded}
-            addTokenFunction={addTokenFunction}
-            walletFGSBalance={walletFGSBalance}
-          />
-        </div>
-      </section>
+      <Navbar account={account} connectWallet={connectWallet} addTokenFunction={addTokenFunction} />
 
       <section className="w-full flex flex-col justify-start items-center  mt-4 my-4">
         <form className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
@@ -248,6 +239,18 @@ function App() {
             </button>
           )}
         </form>
+      </section>
+      <section className="w-full flex flex-col justify-start items-center  mt-4 my-4">
+      <button
+          type="button"
+          onClick={addTokenFunction}
+          className="flex flex-row justify-center items-center  bg-[#2952e3] p-2 rounded-full cursor-pointer hover:bg-[#2546bd] mb-6"
+      >
+                <AiFillPlayCircle className="text-white mr-2" />
+                <p className="text-white text-base font-semibold">
+                  Add FGS Token
+                </p>
+        </button>
       </section>
 
     </>

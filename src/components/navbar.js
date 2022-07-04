@@ -7,7 +7,7 @@ const NavBarItem = ({ title, classprops }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
 );
 
-const Navbar = ({ account, connectWallet }) => {
+const Navbar = ({ account, connectWallet, addTokenFunction }) => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
   return (
@@ -30,6 +30,9 @@ const Navbar = ({ account, connectWallet }) => {
               </p>
             </button>
           )}
+        </li>
+        <li>
+        
         </li>
       </ul>
     </nav>
